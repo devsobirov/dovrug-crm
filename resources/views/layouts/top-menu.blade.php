@@ -45,6 +45,7 @@
                         </svg>
                     </x-slot>
                     Demo link
+                    {{-- {{ dd(route('logout'))}} --}}
                 </x-dropdown-link>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

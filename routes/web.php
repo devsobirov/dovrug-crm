@@ -29,9 +29,9 @@ Route::domain("$subdomain.$mainDomain")->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'handle'])->name('dashboard');
     });
 
-    $directorGroup = [['middleware' => ['user-role:'.UserRoles::ROLE_DIRECTOR]], 'prefix' => 'director'];
-    $adminGroup = [['middleware' => ['user-role:'.UserRoles::ROLE_ADMINISTRATOR]],'prefix' => 'administrator'];
-    $depositorGroup = [['middleware' => ['user-role:'.UserRoles::ROLE_ADMINISTRATOR]],'prefix' => 'administrator'];
+    $directorGroup = ['middleware' => ['user-role:'.UserRoles::ROLE_DIRECTOR], 'prefix' => 'director'];
+    $adminGroup = ['middleware' => ['user-role:'.UserRoles::ROLE_ADMINISTRATOR],'prefix' => 'administrator'];
+    $depositorGroup = ['middleware' => ['user-role:'.UserRoles::ROLE_ADMINISTRATOR],'prefix' => 'depositor'];
 
     Route::group($directorGroup, function () {
         Route::get('/', [ DirectorController::class, 'index'])->name('director');
@@ -56,9 +56,9 @@ Route::middleware('main-domain')->group(function () {
     Route::get('/', function () {return view('welcome');});
     Route::get('/dashboard', function () {return redirect()->route('dashboard');});
 
-    require __DIR__.'/auth.php';
 });
 
+require __DIR__ . '/auth.php';
 
 Route::get('/test', function () {
     return redirect()->route('dashboard');

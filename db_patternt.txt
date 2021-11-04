@@ -1,0 +1,36 @@
+ADMINISTRATOR RELATED MODELS
+    Units (20-50 row)
+        id
+        tmps === timestamps(created_at, updated_at);
+        __________
+        name {  sht,, l, gr,  kg, tonna , m , m2, m3, quti, o'ram,}
+        full_name {dona, litr, gramm, ...} (nullable)
+
+    Material (+- 1000 row)
+        id
+        tmps + deleted_at (softdeletes)
+        ___________
+        name
+        code (int,unique)
+        bar_code (string) {shtrix-kod img path}
+        qr_code  (string) {qr-kod img path}
+        unit_id => join { id = 1, unit_name = kg, unit_full_name = Kilogramm}
+        deposit_amount { количество в складе }
+        proccess_amount { количество в цехе }
+        total_amount -> maybe??{ общее количество в складе и цехе }
+        trigger_limit { n-unit ga == || <  bo'lsa notification yuborish kk!}
+        on_stock (bool) -> maybe?? { hozir bor yoki yoq }
+        price
+        old_prices (json, nullable) -> maybe?? { 0 => [ start_date => tmps, end_date => tmps, price => int ], 1 => [] }
+
+
+    Product
+        id
+        tmps + deleted_at (softdeletes)
+        ___________
+        .....
+
+DESIGNER RELATED MODELS
+    Product_pattern
+        materials_list (json) { 0 => {name = 'kraska', 'amount' => 2, 'unit' => unit}, {1 => }} }
+
