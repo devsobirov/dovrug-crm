@@ -38,7 +38,7 @@
     <!-- Profile menu -->
     <li class="relative">
         {{ $trigger }}
-        <template x-if="isProfileMenuOpen">
+        <div x-show="isProfileMenuOpen">
             <ul
                 x-transition:leave="transition ease-in duration-150"
                 x-transition:leave-start="opacity-100"
@@ -50,7 +50,7 @@
             >
                 {{ $content }}
             </ul>
-        </template>
+        </div>
     </li>
 </ul>
 

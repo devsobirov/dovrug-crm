@@ -23,6 +23,7 @@ class UserTableSeeder extends Seeder
                 'email_verified_at' => now(),
                 'password' => Hash::make(12345678),
                 'remember_token' => Str::random(10),
+                'depository_id' => 1
             ],
             [
                 'name' => 'Director Name',
@@ -31,6 +32,7 @@ class UserTableSeeder extends Seeder
                 'email_verified_at' => now(),
                 'password' => Hash::make(12345678),
                 'remember_token' => Str::random(10),
+                'depository_id' => 1
             ],
             [
                 'name' => 'Administrator Name',
@@ -39,38 +41,49 @@ class UserTableSeeder extends Seeder
                 'email_verified_at' => now(),
                 'password' => Hash::make(12345678),
                 'remember_token' => Str::random(10),
+                'depository_id' => 1
             ],
+            // [
+            //     'name' => 'Administrator-2 Name',
+            //     'email' => 'admin2@mail.com',
+            //     'roles' => json_encode(['accountant','administrator', 'designer', 'depositor']),
+            //     'email_verified_at' => now(),
+            //     'password' => Hash::make(12345678),
+            //     'remember_token' => Str::random(10),
+            // ],
+            // [
+            //     'name' => 'Dizayner Name',
+            //     'email' => 'designer@mail.com',
+            //     'roles' => json_encode(['designer', 'depositor']),
+            //     'email_verified_at' => now(),
+            //     'password' => Hash::make(12345678),
+            //     'remember_token' => Str::random(10),
+            // ],
+            // [
+            //     'name' => 'Kassir Name',
+            //     'email' => 'accountant@mail.com',
+            //     'roles' => json_encode(['accountant', 'depositor']),
+            //     'email_verified_at' => now(),
+            //     'password' => Hash::make(12345678),
+            //     'remember_token' => Str::random(10),
+            // ],
             [
-                'name' => 'Administrator-2 Name',
-                'email' => 'admin2@mail.com',
-                'roles' => json_encode(['accountant','administrator', 'designer', 'depositor']),
-                'email_verified_at' => now(),
-                'password' => Hash::make(12345678),
-                'remember_token' => Str::random(10),
-            ],
-            [
-                'name' => 'Dizayner Name',
-                'email' => 'designer@mail.com',
-                'roles' => json_encode(['designer', 'depositor']),
-                'email_verified_at' => now(),
-                'password' => Hash::make(12345678),
-                'remember_token' => Str::random(10),
-            ],
-            [
-                'name' => 'Kassir Name',
-                'email' => 'accountant@mail.com',
-                'roles' => json_encode(['accountant', 'depositor']),
-                'email_verified_at' => now(),
-                'password' => Hash::make(12345678),
-                'remember_token' => Str::random(10),
-            ],
-            [
-                'name' => 'Skladchik Name',
+                'name' => 'Складчик 1',
                 'email' => 'depositor@mail.com',
                 'roles' => json_encode(['depositor']),
                 'email_verified_at' => now(),
                 'password' => Hash::make(12345678),
                 'remember_token' => Str::random(10),
+                'depository_id' => 1
+            ],
+            [
+                'name' => 'Складчик 2',
+                'email' => 'depositor2@mail.com',
+                'roles' => json_encode(['depositor']),
+                'email_verified_at' => now(),
+                'password' => Hash::make(12345678),
+                'remember_token' => Str::random(10),
+                'depository_id' => 2
             ],
         ];
 

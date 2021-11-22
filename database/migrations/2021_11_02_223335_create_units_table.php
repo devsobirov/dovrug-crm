@@ -16,6 +16,9 @@ class CreateUnitsTable extends Migration
         Schema::create('units', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
+            $table->string('symbol');   // gr,kg,L
+            $table->string('name')->nullable();     // gramm, kligramm, litr
         });
     }
 

@@ -180,6 +180,7 @@ module.exports = {
             "hover",
             "focus",
             "active",
+            "disabled",
             "odd",
             "dark",
             "dark:hover",
@@ -197,13 +198,15 @@ module.exports = {
             "dark:hover",
             "dark:active",
         ],
-        placeholderColor: ["focus", "dark", "dark:focus"],
+        placeholderColor: ["focus", "dark", "dark:focus", "disabled"],
         borderColor: ["focus", "hover", "dark", "dark:focus", "dark:hover"],
         divideColor: ["dark"],
         boxShadow: ["focus", "dark:focus"],
+        cursor: ["disabled", "dark:disabled"]
     },
     plugins: [
         require("tailwindcss-multi-theme"),
-        require("@tailwindcss/forms")
+        require('@tailwindcss/custom-forms'),
+        // require("@tailwindcss/forms")
     ],
 };

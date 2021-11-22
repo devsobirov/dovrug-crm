@@ -10,8 +10,9 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@tailwindcss/custom-forms": "^0.2.1",
         "@tailwindcss/forms": "^0.2.1",
-        "alpinejs": "^2.7.3",
+        "alpinejs": "^3.4.2",
         "autoprefixer": "^10.1.0",
         "axios": "^0.21",
         "color": "^4.0.1",

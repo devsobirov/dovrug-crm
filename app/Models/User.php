@@ -44,4 +44,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'roles' => 'array'
     ];
+
+    protected $with = ['depository:id,name'];
+
+    /**
+     * Belong to relationship
+     * 
+     * @return Depository|Eloquent|null
+     */
+    public function depository()
+    {
+        return $this->belongsTo(Depository::class);
+    }
 }

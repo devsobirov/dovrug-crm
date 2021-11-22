@@ -21,10 +21,10 @@
                     <!-- Input[ype="email"] -->
                     <div class="mt-4">
                         <x-label :value="__('Email')"/>
-                        <x-input type="email"
+                        <input type="email"
                                  id="email"
                                  name="email"
-                                 class="block w-full"
+                                 class="block w-full border border-purple-200 focus:border-purple-600 outline-none form-input"
                                  required
                                  autofocus/>
                     </div>
@@ -32,17 +32,17 @@
                     <!-- Input[ype="password"] -->
                     <div class="mt-4">
                         <x-label :value="__('Password')"/>
-                        <x-input type="password"
+                        <input type="password"
                                  id="password"
                                  name="password"
-                                 class="block w-full"/>
+                                 class="block w-full border border-purple-200 focus:border-purple-600 outline-none form-input"/>
                     </div>
 
                     <div class="flex mt-6 text-sm">
                         <label class="flex items-center dark:text-gray-400">
                             <input type="checkbox"
                                    name="remember"
-                                   class="text-purple-600 form-checkbox focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                   class="text-purple-600 border border-purple-200 focus:border-purple-600 form-checkbox focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                             <span class="ml-2">{{ __('Remember me') }}</span>
                         </label>
                     </div>

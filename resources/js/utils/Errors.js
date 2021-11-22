@@ -13,7 +13,7 @@ class Errors {
      * @param {string} field
      */
     has(field) {
-        return this.errors.hasOwnProperty(field);
+        return this.errors.errors.hasOwnProperty(field);
     }
 
 
@@ -31,8 +31,8 @@ class Errors {
      * @param {string} field
      */
     get(field) {
-        if (this.errors[field]) {
-            return this.errors[field][0];
+        if (this.errors.errors[field]) {
+            return this.errors.errors[field][0];
         }
     }
 

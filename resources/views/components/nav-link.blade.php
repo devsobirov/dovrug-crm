@@ -1,4 +1,4 @@
-@props(['active'])
+@props(['active' => false])
 
 @if($active)
     <span

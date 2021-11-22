@@ -16,7 +16,7 @@ ADMINISTRATOR RELATED MODELS
         qr_code  (string) {qr-kod img path}
         unit_id => join { id = 1, unit_name = kg, unit_full_name = Kilogramm}
         deposit_amount { количество в складе }
-        proccess_amount { количество в цехе }
+        process_amount { количество в цехе }
         total_amount -> maybe??{ общее количество в складе и цехе }
         trigger_limit { n-unit ga == || <  bo'lsa notification yuborish kk!}
         on_stock (bool) -> maybe?? { hozir bor yoki yoq }

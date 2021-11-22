@@ -5,9 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Unit extends Model
+class Depository extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['symbol', 'name'];
 }

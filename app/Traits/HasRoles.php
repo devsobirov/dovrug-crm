@@ -23,6 +23,9 @@ trait HasRoles
      */
     public function hasRole($role)
     {
+        if ($this->getMainRole() == UserRoles::ROLE_DIRECTOR) {
+            return true;
+        }
         return (boolean)in_array(mb_strtolower($role), $this->getRoles());
     }
 
@@ -78,6 +81,34 @@ trait HasRoles
             $this->setRoles($roles);
         }
         return $this;
+    }
+
+    /**
+     * Gets public name of users role 
+     * 
+     * @param string $roleName
+     * @return string|void
+     */
+    public function getRoleAlias($roleName)
+    {
+        $roleList = UserRoles::getRolesList();
+        if (array_key_exists($roleName, $roleList))  {
+            return $roleList[$roleName];
+        }
+    }
+
+    /**
+     * Gets related background color for users role
+     *
+     * @param string $roleName
+     * @return string|void
+     */
+    public function getRoleColor($roleName)
+    {
+        $roleColors = UserRoles::getColorsForRoles();
+        if (array_key_exists($roleName, $roleColors))  {
+            return $roleColors[$roleName];
+        }
     }
 
     /**

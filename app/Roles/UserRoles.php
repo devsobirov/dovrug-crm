@@ -38,4 +38,14 @@ class UserRoles
             self::ROLE_DEPOSITOR => 'Складчик'
         ];
     }
+
+    public static function getColorsForRoles() {
+        return [
+            self::ROLE_DIRECTOR => 'purple',
+            self::ROLE_ADMINISTRATOR => 'yellow',
+            self::ROLE_DESIGNER => 'red',
+            self::ROLE_ACCOUNTANT => 'blue',
+            self::ROLE_DEPOSITOR => 'green'
+        ];
+    }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMaterialsTable extends Migration
+class CreateDepositLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateMaterialsTable extends Migration
      */
     public function up()
     {
-        Schema::create('materials', function (Blueprint $table) {
+        Schema::create('deposit_logs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->softDeletes();
 
-            $table->string('name')->unique();
-            $table->string('code')->unique();
+            $table->foreignId('material_id')->constrained('materials');
+            $table->foreignId('depository_id')->constrained('depositories');
+            $table->foreignId('user_id')->constrained('users');
             $table->string('description')->nullable();
-            $table->unsignedBigInteger('unit_id');
-            $table->string('trigger_limit');
+            $table->string('amount');
+            $table->integer('type');
             $table->string('price');
         });
     }
@@ -34,6 +34,6 @@ class CreateMaterialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('materials');
+        Schema::dropIfExists('deposit_logs');
     }
 }
